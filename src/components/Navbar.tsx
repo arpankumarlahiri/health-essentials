@@ -1,8 +1,8 @@
-
 import { useState } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { generalDetails } from "../../constants/generaldetails";
 
 export const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -28,7 +28,9 @@ export const Navbar = () => {
               <div className="w-8 h-8 bg-healthcare-blue rounded-lg flex items-center justify-center mr-3">
                 <span className="text-white font-bold text-sm">RT</span>
               </div>
-              <span className="font-bold text-xl text-gray-900">RTEMPORARY</span>
+              <span className="font-bold text-xl text-gray-900">
+                {generalDetails.companyName}
+              </span>
             </Link>
           </div>
 
@@ -64,7 +66,11 @@ export const Navbar = () => {
               onClick={() => setIsOpen(!isOpen)}
               className="inline-flex items-center justify-center p-2 rounded-md text-gray-600 hover:text-healthcare-blue hover:bg-healthcare-light-blue focus:outline-none"
             >
-              {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              {isOpen ? (
+                <X className="h-6 w-6" />
+              ) : (
+                <Menu className="h-6 w-6" />
+              )}
             </button>
           </div>
         </div>
@@ -89,7 +95,10 @@ export const Navbar = () => {
               </Link>
             ))}
             <div className="pt-2">
-              <Button asChild className="w-full bg-healthcare-blue hover:bg-blue-600">
+              <Button
+                asChild
+                className="w-full bg-healthcare-blue hover:bg-blue-600"
+              >
                 <Link to="/contact" onClick={() => setIsOpen(false)}>
                   Get Free Quote
                 </Link>

@@ -1,6 +1,6 @@
-
 import { Link } from "react-router-dom";
 import { Mail, Phone } from "lucide-react";
+import { generalDetails } from "../../constants/generaldetails";
 
 export const Footer = () => {
   return (
@@ -13,16 +13,18 @@ export const Footer = () => {
               <div className="w-8 h-8 bg-healthcare-blue rounded-lg flex items-center justify-center mr-3">
                 <span className="text-white font-bold text-sm">RT</span>
               </div>
-              <span className="font-bold text-xl text-gray-900">RTEMPORARY Multiservices</span>
+              <span className="font-bold text-xl text-gray-900">
+                {generalDetails.companyName}
+              </span>
             </div>
             <p className="text-gray-600 mb-4 max-w-md">
-              Providing affordable OPD healthcare membership plans since 2020. 
+              Providing affordable OPD healthcare membership plans since 2020.
               Trusted by thousands for quality healthcare support.
             </p>
             <div className="space-y-2">
               <div className="flex items-center text-gray-600">
                 <Phone className="h-4 w-4 mr-2" />
-                <span>+91 XXXXX-XXXXX</span>
+                <span>{generalDetails.companyPhone}</span>
               </div>
               <div className="flex items-center text-gray-600">
                 <Mail className="h-4 w-4 mr-2" />
